@@ -1,0 +1,2227 @@
+<html lang="en" data-bs-theme="light"><plasmo-csui></plasmo-csui><head>
+    <meta charset="UTF-8">
+    <title>Online Fasting - Intermittent Fasting Tracker</title>
+
+    <meta name="description" content="Are you looking for a good fasting tracker? This is an accurate online intermittent fasting tracker that work in your browser and suitable for beginners, intermediate, and advanced.">
+
+    <meta name="twitter:title" content="Online Fasting - Intermittent Fasting Tracker">
+    <meta name="twitter:description" content="Are you looking for a good fasting tracker? This is an accurate online intermittent fasting tracker that work in your browser and suitable for beginners, intermediate, and advanced.">
+    <meta name="twitter:url" content="https://iffasting.com/">
+    <meta name="twitter:image" content="https://iffasting.com/images/intermittent-fasting.jpg">
+    <meta name="twitter:card" content="summary">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://iffasting.com/">
+    <meta property="og:title" content="Online Fasting - Intermittent Fasting Tracker">
+    <meta property="og:description" content="Are you looking for a good fasting tracker? This is an accurate online intermittent fasting tracker that work in your browser and suitable for beginners, intermediate, and advanced.">
+    <meta property="og:image" content="https://iffasting.com/images/intermittent-fasting.jpg">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://iffasting.com/public/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://iffasting.com/public/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://iffasting.com/public/icons/favicon-16x16.png">
+    <link rel="icon" href="https://iffasting.com/public/icons/favicon.ico">
+    <link rel="manifest" href="https://iffasting.com/public/icons/site.webmanifest">
+
+    
+
+    <link rel="canonical" href="https://iffasting.com/">
+    <link rel="alternate" hreflang="x-default" href="https://iffasting.com/">
+    <link rel="alternate" hreflang="en" href="https://iffasting.com/">
+    <link rel="alternate" hreflang="da" href="https://iffasting.com/da/">
+    <link rel="alternate" hreflang="de" href="https://iffasting.com/de/">
+    <link rel="alternate" hreflang="es" href="https://iffasting.com/es/">
+    <link rel="alternate" hreflang="fr" href="https://iffasting.com/fr/">
+    <link rel="alternate" hreflang="he" href="https://iffasting.com/he/">
+    <link rel="alternate" hreflang="ar" href="https://iffasting.com/ar/">
+    <link rel="alternate" hreflang="it" href="https://iffasting.com/it/">
+    <link rel="alternate" hreflang="ja" href="https://iffasting.com/ja/">
+    <link rel="alternate" hreflang="ko" href="https://iffasting.com/ko/">
+    <link rel="alternate" hreflang="nl" href="https://iffasting.com/nl/">
+    <link rel="alternate" hreflang="pl" href="https://iffasting.com/pl/">
+    <link rel="alternate" hreflang="pt" href="https://iffasting.com/pt/">
+    <link rel="alternate" hreflang="ru" href="https://iffasting.com/ru/">
+    <link rel="alternate" hreflang="sv" href="https://iffasting.com/sv/">
+    <link rel="alternate" hreflang="uk" href="https://iffasting.com/uk/">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://iffasting.com/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&amp;display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    :root {
+        --primary-color: #007AFF;
+        --secondary-color: #FF9500;
+        --background-color: #F2F2F7;
+        --card-background: #FFFFFF;
+        --text-color: #000000;
+        --secondary-text-color: #8E8E93;
+    }
+
+    .app-container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .card {
+        border-radius: 8px;
+        padding: 2rem;
+        margin-bottom: 20px;
+        border: none;
+    }
+
+    .card-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 15px;
+        color: var(--primary-color);
+    }
+
+    .nav-pills .nav-item {
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .btn-primary-main {
+        background-color: var(--primary-color);
+        border: none;
+        border-radius: 50px;
+        padding: 10px 20px;
+    }
+
+    .btn-secondary {
+        border: none;
+        border-radius: 50px;
+        padding: 10px 20px;
+    }
+
+    .btn-danger {
+        border: none;
+        border-radius: 50px;
+        padding: 10px 20px;
+        background-color: var(--bs-btn-bg);
+    }
+
+    .btn-outline-primary {
+        color: var(--primary-color);
+        border-color: var(--primary-color);
+        border-radius: 50px;
+        padding: 10px 20px;
+    }
+
+    .btn-outline-primary-custom {
+        font-weight: bold;
+        border-radius: 15px;
+    }
+
+    .fasting-progress {
+        width: 200px;
+        height: 200px;
+        margin: 0 auto 20px;
+        position: relative;
+    }
+
+    .fasting-progress-ring {
+        transform: rotate(-90deg);
+    }
+
+    .fasting-progress-circle {
+        fill: transparent;
+        stroke: #E0E0E0;
+    }
+
+    .fasting-progress-circle-progress {
+        fill: transparent;
+        stroke: var(--primary-color);
+        stroke-linecap: round;
+        transition: stroke-dashoffset 0.35s;
+    }
+
+    .fasting-timer-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 100%;
+    }
+
+    .fasting-timer {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2rem;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .timer-toggle {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: none;
+        border: none;
+        color: var(--primary-color);
+        cursor: pointer;
+        font-size: 1rem;
+        padding: 5px;
+    }
+
+    .timer-toggle:hover {
+        color: var(--primary-color-dark);
+    }
+
+    .fasting-info {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.9rem;
+        color: #666;
+        margin-top: 30px;
+    }
+
+    .fasting-info-item {
+        text-align: center;
+    }
+
+    .fasting-info-item i {
+        font-size: 1.5rem;
+        color: var(--primary-color);
+        margin-bottom: 5px;
+    }
+
+    .water-progress {
+        width: 150px;
+        height: 150px;
+        margin: 0 auto 20px;
+        position: relative;
+        background-color: #E3F2FD;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    .water-fill {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #2196F3;
+        transition: height 0.5s ease;
+    }
+
+    .water-percentage {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #1565C0;
+    }
+
+    .weight-value {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--primary-color);
+        text-align: center;
+    }
+
+    .weight-unit {
+        font-size: 1rem;
+        color: var(--bs-body-color);
+    }
+
+    .weight-list-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    .weight-list-item:last-child {
+        border-bottom: none;
+    }
+
+    .weight-change {
+        font-weight: bold;
+    }
+
+    .weight-change.positive {
+        color: #28a745;
+    }
+
+    .weight-change.negative {
+        color: #dc3545;
+    }
+
+    .bmi-indicator {
+        text-align: center;
+        margin-top: 20px;
+        font-weight: bold;
+        position: relative;
+        direction: ltr;
+    }
+
+    .bmi-bar {
+        height: 10px;
+        background: linear-gradient(to right,
+                #3498db 0%, #3498db 18.5%,
+                #2ecc71 18.5%, #2ecc71 43.5%,
+                #f1c40f 43.5%, #f1c40f 73.5%,
+                #e74c3c 73.5%, #e74c3c 100%);
+        border-radius: 5px;
+        margin-top: 10px;
+        position: relative;
+        overflow: visible;
+    }
+
+    .bmi-marker {
+        position: absolute;
+        top: -5px;
+        width: 20px;
+        height: 20px;
+        background-color: var(--bs-body-bg);
+        border: 2px solid var(--bs-blue);
+        border-radius: 50%;
+        transform: translateX(-50%);
+        transition: left 0.3s ease;
+    }
+
+    .bmi-categories {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 5px;
+        font-size: 0.8rem;
+        color: #666;
+    }
+
+    .mood-selector {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+
+    .mood-icon {
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        padding: 5px;
+        border-radius: 50%;
+    }
+
+    .mood-icon:hover {
+        transform: scale(1.1);
+    }
+
+    .mood-icon.active {
+        color: var(--primary-color) !important;
+    }
+
+    .mood-icon[data-mood="Great"] {
+        color: #4CAF50;
+    }
+
+    .mood-icon[data-mood="Good"] {
+        color: #8BC34A;
+    }
+
+    .mood-icon[data-mood="Okay"] {
+        color: #FFC107;
+    }
+
+    .mood-icon[data-mood="Not Good"] {
+        color: #FF9800;
+    }
+
+    .mood-icon[data-mood="Bad"] {
+        color: #F44336;
+    }
+
+    #waterSettings {
+        font-size: 1.4rem;
+        color: var(--primary-color);
+    }
+
+    .status-icons {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 30px;
+    }
+
+    .status-icon-container {
+        text-align: center;
+    }
+
+    .status-icon {
+        font-size: 1.5rem;
+        color: #CCC;
+        transition: color 0.3s ease;
+        margin-bottom: 5px;
+    }
+
+    .status-icon.active {
+        color: var(--primary-color);
+    }
+
+    .imperial-height {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .imperial-height input {
+        width: 48%;
+    }
+
+    #fastingSection {
+        padding-bottom: 1rem;
+    }
+
+    .fasting-history-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    .fasting-history-item:last-child {
+        border-bottom: none;
+    }
+
+    .fasting-history-icon {
+        font-size: 1.5rem;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    .fasting-history-details {
+        flex-grow: 1;
+    }
+
+    .fasting-history-date {
+        font-weight: bold;
+    }
+
+    .fasting-history-duration {
+        color: #666;
+    }
+
+    .milestone-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+
+    .milestone-toggle {
+        margin-right: 10px;
+    }
+
+    .milestone-details {
+        flex-grow: 1;
+    }
+
+    .milestone-hours {
+        font-weight: bold;
+    }
+
+    .milestone-message {
+        color: #666;
+    }
+
+    @media (max-width: 768px) {
+        .app-container {
+            padding: 10px;
+        }
+
+        .card {
+            padding: 15px;
+        }
+
+        .fasting-timer {
+            font-size: 1.5rem;
+        }
+    }
+</style>
+</head>
+
+<body class="bg-body-tertiary" style="">
+    <header class="border-bottom">
+        <nav class="d-flex align-items-center p-3">
+            <div>
+                <button class="btn btn-primary fw-bold m-0 ms-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSidebar">
+                    ☰
+                </button>
+            </div>
+
+            <div class="text-center flex-grow-1 m-0">
+                <h1 class="h2 responsive-h1 m-0">Intermittent Fasting</h1>
+            </div>
+
+            <div class="d-flex align-items-center m-0">
+                <ul class="navbar-nav d-flex align-items-center mb-0">
+
+                    <li class="nav-item m-0">
+                        <i class="hover-effect d-flex align-items-center justify-content-center fa fa-sun m-0" role="button" id="bg-theme"></i>
+                    </li>
+
+                    <li class="nav-item dropdown m-0">
+                        <i class="nav-link hover-effect d-flex align-items-center justify-content-center fa-solid fa-globe m-0" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"></i>
+                        <ul class="dropdown-menu shadow">
+                                                        <li><a class="dropdown-item" href="https://iffasting.com/">English</a></li>
+                            <li><a class="dropdown-item" href="https://iffasting.com/da/">Dansk</a></li>
+                            <li><a class="dropdown-item" href="https://iffasting.com/es/">Español</a></li>
+                            <li><a class="dropdown-item" href="https://iffasting.com/de/">Deutsch</a></li>
+                            <li><a class="dropdown-item" href="https://iffasting.com/fr/">Français</a></li>
+                            <li><a class="dropdown-item" href="https://iffasting.com/he/">עברית</a></li>
+                            <li><a class="dropdown-item" href="https://iffasting.com/ar/">عربي</a></li>
+                            <li><a class="dropdown-item" href="https://iffasting.com/it/">Italiano</a></li>
+                            <li><a class="dropdown-item" href="https://iffasting.com/ja/">日本語</a></li>
+                            <li><a class="dropdown-item" href="https://iffasting.com/ko/">한국어</a></li>
+                            <li><a class="dropdown-item" href="https://iffasting.com/nl/">Nederlands</a>
+                            </li>
+                            <li><a class="dropdown-item" href="https://iffasting.com/pl/">Polski</a></li>
+                            <li><a class="dropdown-item" href="https://iffasting.com/pt/">Português</a>
+                            </li>
+                            <li><a class="dropdown-item" href="https://iffasting.com/ru/">Русский</a></li>
+                            <li><a class="dropdown-item" href="https://iffasting.com/sv/">Svenska</a></li>
+                            <li><a class="dropdown-item" href="https://iffasting.com/uk/">Українська</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="border-0 offcanvas offcanvas-start bg-body-tertiary" tabindex="-1" id="offcanvasSidebar">
+                <div class="offcanvas-header">
+                    <p class="h5 offcanvas-title">Menu</p>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+                </div>
+                <div class="offcanvas-body">
+                    
+                    <ul class="list-group list-group-flush">
+                                                                        <li class="list-group-item list-group-item-action active mb-1 border rounded">
+                            <a class="text-white stretched-link text-decoration-none" href="https://iffasting.com/">
+                                <i class="fa-solid fa-hourglass-end me-2"></i> Intermittent Fasting
+                            </a>
+                        </li>
+                                                                        <li class="list-group-item list-group-item-action  mb-1 border rounded">
+                            <a class=" stretched-link text-decoration-none" href="https://iffasting.com/fasting-calculator/">
+                                <i class="fas fa-calculator me-2"></i> Fasting Calculator
+                            </a>
+                        </li>
+                                            </ul>
+                </div>
+            </div>
+
+        </nav>
+    </header>
+
+    <main class="container my-5">
+        <div class="app-container">
+    <section id="fastingSection" class="mb-4">
+        <div class="card-body position-relative">
+            <div class="d-flex justify-content-between align-items-start mb-3">
+                <div id="fastingStatus" class="text-center flex-grow-1 text-primary"><i class="fas fa-play-circle"></i> Push start when you're ready</div>
+                <button type="button" class="btn btn-link p-0 ms-2" data-bs-toggle="modal" data-bs-target="#milestonesModal" title="Fasting Milestones">
+                    <i class="fas fa-bell"></i>
+                </button>
+            </div>
+            <div class="fasting-progress">
+                <svg class="fasting-progress-ring" width="200" height="200">
+                    <circle class="fasting-progress-circle" stroke-width="8" cx="100" cy="100" r="96"></circle>
+                    <circle class="fasting-progress-circle-progress" stroke-width="8" cx="100" cy="100" r="96" style="stroke-dasharray: 603.186, 603.186; stroke-dashoffset: 603.186;"></circle>
+                </svg>
+                <div class="fasting-timer" id="fastingTimer">00:00:00</div>
+                <button class="timer-toggle" id="timerToggle"><i class="fas fa-exchange-alt"></i></button>
+            </div>
+            <div class="text-center mb-3">
+                <span id="fastingType">16-8 Intermittent Fasting</span>
+            </div>
+            <div class="fasting-info">
+                <div class="fasting-info-item">
+                    <i class="fas fa-clock"></i>
+                    <div id="fastingGoal">16-8</div>
+                </div>
+                <div class="fasting-info-item">
+                    <i class="fas fa-play"></i>
+                    <div id="startTime">--:--</div>
+                </div>
+                <div class="fasting-info-item">
+                    <i class="fas fa-stop"></i>
+                    <div id="endTime">--:--</div>
+                </div>
+            </div>
+            <button id="startStopFasting" class="btn btn-primary-main w-100 mt-3 btn-primary">Start Fasting</button>
+            <button id="editFast" class="btn btn-outline-primary w-100 mt-2">Edit Fasting Plan</button>
+            <div id="shareAchievement" class="mt-3" style="display: none;">
+                <button class="btn btn-primary btn-primary-main" id="shareButton">Share Achievement</button>
+            </div>
+            <div class="status-icons">
+                <div class="status-icon-container">
+                    <i class="fas fa-fire status-icon" data-hours="12" title="Fat burning"></i>
+                </div>
+                <div class="status-icon-container">
+                    <i class="fas fa-brain status-icon" data-hours="14" title="Improved focus"></i>
+                </div>
+                <div class="status-icon-container">
+                    <i class="fas fa-heart status-icon" data-hours="16" title="Heart health"></i>
+                </div>
+                <div class="status-icon-container">
+                    <i class="fas fa-dna status-icon" data-hours="18" title="Cellular repair"></i>
+                </div>
+            </div>
+            <div id="statusExplanation" class="mt-3"></div>
+        </div>
+    </section>
+
+    <ul class="nav nav-pills nav-fill" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="weight-tab" data-bs-toggle="tab" data-bs-target="#weight" type="button" role="tab" aria-controls="weight" aria-selected="true">Weight</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="water-tab" data-bs-toggle="tab" data-bs-target="#water" type="button" role="tab" aria-controls="water" aria-selected="false" tabindex="-1">Water</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="history-tab" data-bs-toggle="tab" data-bs-target="#history" type="button" role="tab" aria-controls="history" aria-selected="false" tabindex="-1">History</button>
+        </li>
+    </ul>
+
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade active show" id="weight" role="tabpanel" aria-labelledby="weight-tab">
+            <div class="card mt-3">
+                <h2 class="card-title">Weight Tracker</h2>
+
+                <div class="d-flex justify-content-between align-items-center mb-3 mt-3">
+                    <div class="btn-group w-100" role="group" aria-label="Unit switcher">
+                        <input type="radio" class="btn-check" name="unitSwitcher" id="metricUnits" autocomplete="off" checked="">
+                        <label class="btn btn-outline-primary" for="metricUnits">KG / CM</label>
+                        <input type="radio" class="btn-check" name="unitSwitcher" id="imperialUnits" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="imperialUnits">LB / IN</label>
+                    </div>
+                </div>
+
+                <div class="weight-value">
+                    <span id="currentWeight" data-weight="0.0">0.0</span>
+                    <span class="weight-unit">kg</span>
+                </div>
+                <p class="text-center text-muted">Don't give up, results will come!</p>
+                <button id="updateWeight" class="btn btn-primary btn-primary-main w-100">Update Weight</button>
+
+                <h3 class="mt-4">Goal</h3>
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div>
+                        <div class="text-muted">Start</div>
+                        <div><span id="startWeight" data-weight="0.0">0.0</span> <span class="weight-unit">kg</span></div>
+                    </div>
+                    <div>&gt;</div>
+                    <div>
+                        <div class="text-muted">Goal</div>
+                        <div><span id="goalWeight" data-weight="0.0">--</span> <span class="weight-unit">kg</span></div>
+                    </div>
+                </div>
+                <button id="setWeightGoal" class="btn btn-outline-primary w-100">Set Goal</button>
+            </div>
+
+            <div class="card mt-3">
+                <h2 class="card-title">Body Mass Index (BMI)</h2>
+                <div class="row g-3 mb-3">
+                    <div class="col-md-6">
+                        <label for="bmiAge" class="form-label">Age</label>
+                        <input type="number" class="form-control" id="bmiAge" placeholder="Age">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Gender</label>
+                        <div class="btn-group w-100" role="group" aria-label="BMI Gender switcher">
+                            <input type="radio" class="btn-check" name="bmiGender" id="bmiMale" autocomplete="off" checked="">
+                            <label class="btn btn-outline-primary w-50" for="bmiMale">Male</label>
+                            <input type="radio" class="btn-check" name="bmiGender" id="bmiFemale" autocomplete="off">
+                            <label class="btn btn-outline-primary w-50" for="bmiFemale">Female</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-3 mb-3">
+                    <div class="col-md-6">
+                        <label for="bmiWeight" class="form-label">Weight (<span id="bmiWeightUnit">kg</span>)</label>
+                        <input type="number" class="form-control" id="bmiWeight" placeholder="Weight">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="bmiHeight" class="form-label">Height (<span id="bmiHeightUnit">cm</span>)</label>
+                        <input type="number" class="form-control metric-input" id="bmiHeight" placeholder="Height">
+                        <div class="imperial-height" style="display: none;">
+                            <input type="number" class="form-control d-inline-block w-45" id="heightFeet" placeholder="ft">
+                            <input type="number" class="form-control d-inline-block w-45" id="heightInches" placeholder="in">
+                        </div>
+                    </div>
+                </div>
+                <button id="calculateBMI" class="btn btn-primary btn-primary-main w-100">Calculate BMI</button>
+                <div id="bmiResult" class="mt-3 text-center">Please enter weight, height, and age to calculate BMI</div>
+                <div class="bmi-indicator mt-3">
+                    <div class="bmi-bar">
+                        <div class="bmi-marker" id="bmiMarker"></div>
+                    </div>
+                    <div class="bmi-categories mt-2 d-flex justify-content-between">
+                        <span>Underweight</span>
+                        <span>Normal</span>
+                        <span>Overweight</span>
+                        <span>Obese</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="water" role="tabpanel" aria-labelledby="water-tab">
+            <div class="card mt-3">
+                <div class="card-body position-relative">
+                    <button id="waterSettings" class="btn btn-link position-absolute top-0 end-0 mt-2 me-2" title="Water Intake Settings">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                    <h2 class="card-title mb-4">
+                        <i class="fas fa-tint me-2"></i> Water Intake
+                    </h2>
+                    <div class="water-progress">
+                        <div class="water-fill" id="waterFill" style="height: 0%;"></div>
+                        <div class="water-percentage" id="waterPercentage">0%</div>
+                    </div>
+                    <div class="text-center mb-3">
+                        <span id="waterAmount">0</span> / <span id="waterGoal">2500</span> ml
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <button id="decreaseWater" class="btn btn-outline-primary btn-outline-primary-custom me-2">-</button>
+                        <button id="increaseWater" class="btn btn-outline-primary btn-outline-primary-custom">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="history" role="tabpanel" aria-labelledby="history-tab">
+            <div class="card mt-3">
+                <h2 class="card-title">Weight History</h2>
+                <div id="weightHistoryList"><p class="text-muted text-center">No weight history available</p></div>
+                <button id="clearWeightHistory" class="btn btn-danger w-100 mt-3">Clear Weight History</button>
+            </div>
+            <div class="card mt-3">
+                <h2 class="card-title">Fasting History</h2>
+                <div id="fastingHistoryList">
+            <div class="fasting-history-item">
+                <div class="fasting-history-icon">
+                    <i class="far fa-meh" style="color: #FFC107;"></i>
+                </div>
+                <div class="fasting-history-details">
+                    <div class="fasting-history-date">Dec 1, 2024</div>
+                    <div class="fasting-history-duration">00:10:58 / 16h</div>
+                </div>
+            </div>
+        </div>
+                <button id="clearFastingHistory" class="btn btn-danger w-100 mt-3">Clear Fasting History</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="editFastModal" tabindex="-1" aria-labelledby="editFastModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editFastModalLabel">Edit Fasting Plan</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label for="fastingPlan" class="form-label">Fasting Plan</label>
+                    <select class="form-select" id="fastingPlan">
+                        <option value="12-12">12:12</option>
+                        <option value="14-10">14:10</option>
+                        <option value="16-8">16:8</option>
+                        <option value="18-6">18:6</option>
+                        <option value="20-4">20:4</option>
+                        <option value="custom">Custom</option>
+                    </select>
+                </div>
+                <div class="mb-3" id="customPlanInputs" style="display: none;">
+                    <label for="customFastingHours" class="form-label">Fasting Hours</label>
+                    <input type="number" class="form-control" id="customFastingHours" min="12" max="23">
+                </div>
+                <div class="mb-3">
+                    <label for="startDateTime" class="form-label">Start Date and Time</label>
+                    <input type="datetime-local" class="form-control" id="startDateTime">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary btn-primary-main" id="saveEditFast">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="finishFastModal" tabindex="-1" aria-labelledby="finishFastModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="finishFastModalLabel">Finish Fasting</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h4>You have fasted for</h4>
+                <h2 id="totalFastDuration">00:10:57</h2>
+                <div class="mb-3">
+                    <label class="form-label">How do you feel?</label>
+                    <div class="mood-selector">
+                        <button type="button" class="btn btn-link mood-icon" data-mood="Great" aria-label="Great"><i class="far fa-grin"></i></button>
+                        <button type="button" class="btn btn-link mood-icon" data-mood="Good" aria-label="Good"><i class="far fa-smile"></i></button>
+                        <button type="button" class="btn btn-link mood-icon" data-mood="Okay" aria-label="Okay"><i class="far fa-meh"></i></button>
+                        <button type="button" class="btn btn-link mood-icon" data-mood="Not Good" aria-label="Not Good"><i class="far fa-frown"></i></button>
+                        <button type="button" class="btn btn-link mood-icon" data-mood="Bad" aria-label="Bad"><i class="far fa-angry"></i></button>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="fastingNotes" class="form-label">Notes</label>
+                    <textarea class="form-control" id="fastingNotes" rows="3"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary btn-primary-main" id="saveFastingResults">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="weightEntryModal" tabindex="-1" aria-labelledby="weightEntryModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="weightEntryModalLabel">Update Weight</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="weightEntryForm">
+                    <div class="mb-3">
+                        <label for="newWeight" class="form-label">Weight (<span id="modalWeightUnit">kg</span>)</label>
+                        <input type="number" class="form-control" id="newWeight" step="0.1" required="">
+                    </div>
+                    <div class="mb-3">
+                        <label for="weightDate" class="form-label">Date</label>
+                        <input type="date" class="form-control" id="weightDate" required="">
+                    </div>
+                    <div class="mb-3">
+                        <label for="weightNotes" class="form-label">Notes (optional)</label>
+                        <textarea class="form-control" id="weightNotes" rows="3"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary btn-primary-main" id="saveWeightEntry">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="setWeightGoalModal" tabindex="-1" aria-labelledby="setWeightGoalModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="setWeightGoalModalLabel">Set Weight Goal</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="setWeightGoalForm">
+                    <div class="mb-3">
+                        <label for="weightGoal" class="form-label">Weight Goal (<span id="goalWeightUnit">kg</span>)</label>
+                        <input type="number" class="form-control" id="weightGoal" step="0.1" required="">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary btn-primary-main" id="saveWeightGoal">Save Goal</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="waterSettingsModal" tabindex="-1" aria-labelledby="waterSettingsModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="waterSettingsModalLabel">Water Intake Settings</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label for="waterGoalInput" class="form-label">Daily Water Goal (ml)</label>
+                    <input type="number" class="form-control" id="waterGoalInput" min="500" step="100" value="2500">
+                </div>
+                <div class="mb-3">
+                    <label for="waterIncrementInput" class="form-label">Water Increment (ml)</label>
+                    <input type="number" class="form-control" id="waterIncrementInput" min="50" step="50" value="250">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary btn-primary-main" id="saveWaterSettings">Save Settings</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="milestonesModal" tabindex="-1" aria-labelledby="milestonesModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="milestonesModalLabel">Fasting Milestones</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-check form-switch mb-3">
+                    <input class="form-check-input" type="checkbox" id="enableNotifications">
+                    <label class="form-check-label" for="enableNotifications">Enable Notifications</label>
+                </div>
+                <div id="defaultMilestones">
+                    <div id="defaultMilestonesList"></div>
+                </div>
+                <div id="customMilestones">
+                    <h3>Milestones</h3>
+                    <div id="milestoneAlerts">
+            <div class="milestone-item">
+                <div class="form-check milestone-toggle">
+                    <input class="form-check-input default-milestone" type="checkbox" id="milestoneHalfway" disabled="">
+                    <label class="form-check-label" for="milestoneHalfway">Halfway</label>
+                </div>
+                <div class="milestone-details">
+                    <div class="milestone-hours">8 hours</div>
+                    <div class="milestone-message">You're halfway through your 16-hour fast!</div>
+                </div>
+            </div>
+        
+            <div class="milestone-item">
+                <div class="form-check milestone-toggle">
+                    <input class="form-check-input default-milestone" type="checkbox" id="milestoneOneHourLeft" disabled="">
+                    <label class="form-check-label" for="milestoneOneHourLeft">1 Hour Left</label>
+                </div>
+                <div class="milestone-details">
+                    <div class="milestone-hours">15 hours</div>
+                    <div class="milestone-message">Only 1 hour left in your fast!</div>
+                </div>
+            </div>
+        
+            <div class="milestone-item">
+                <div class="form-check milestone-toggle">
+                    <input class="form-check-input default-milestone" type="checkbox" id="milestoneFastingEnd" disabled="">
+                    <label class="form-check-label" for="milestoneFastingEnd">Fasting End</label>
+                </div>
+                <div class="milestone-details">
+                    <div class="milestone-hours">16 hours</div>
+                    <div class="milestone-message">Congratulations! You've completed your 16-hour fast!</div>
+                </div>
+            </div>
+        </div>
+                </div>
+                <button class="btn btn-primary btn-primary-main mt-3" id="addMilestone">Add Custom Milestone</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="addMilestoneModal" tabindex="-1" aria-labelledby="addMilestoneModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addMilestoneModalLabel">Add Custom Milestone</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label for="milestoneHours" class="form-label">Hours into fast</label>
+                    <input type="number" class="form-control" id="milestoneHours" min="1" max="72">
+                </div>
+                <div class="mb-3">
+                    <label for="milestoneMessage" class="form-label">Alert message</label>
+                    <input type="text" class="form-control" id="milestoneMessage">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary btn-primary-main" id="saveMilestone">Save Milestone</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="notificationPermissionModal" tabindex="-1" aria-labelledby="notificationPermissionModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="notificationPermissionModalLabel">Enable Notifications</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Would you like to enable notifications for fasting milestones and updates?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Not Now</button>
+                <button type="button" class="btn btn-primary btn-primary-main" id="enableNotificationsModal">Enable Notifications</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<article class="mt-5">
+    <h2 class="mb-4 mt-4">What is an Online Fasting Tracker?</h2>
+    <p class="fs-6">Our online fasting tracker is made to help manage your fasting periods. It doesn't require any tools or settings, just open your browser, choose a fasting period, and click start. It also allows you to set personalized fasting schedules, track fasting progress, log weight, monitor daily water intake, and review fasting history.</p>
+
+    <h2 class="mb-4 mt-4">What Devices Can Use This Fasting Tracker?</h2>
+    <p class="fs-6">Our tracker works on any device with a web browser. Whether you prefer using your smartphone, tablet, PC, or TV, you can easily track your fasting progress.</p>
+
+    <h2 class="mb-4 mt-4">How to Use This Intermittent Fasting Tracker?</h2>
+    <ol class="fs-6">
+        <li class="mb-2">Choose your preferred fasting plan (16:8, 14:10 ...) by clicking the edit fasting plan button.</li>
+        <li class="mb-2">Set your fasting start time (If not selected, current time will be set as start).</li>
+        <li class="mb-2">Click Start Fasting to begin your fasting period.</li>
+        <li class="mb-2">Use the timer to track your progress.</li>
+        <li>Review your history in the History tab.</li>
+    </ol>
+
+    <h2 class="mb-4 mt-4">What is Intermittent Fasting?</h2>
+    <p class="fs-6">Intermittent fasting is an eating pattern that cycles between periods of fasting and eating. It focuses on when you eat rather than what you eat.</p>
+
+    <h2 class="mb-4 mt-4">How to Get Started with Intermittent Fasting?</h2>
+    <ul class="fs-6">
+        <li class="mb-2">Choose a fasting method (16:8, 5:2...)</li>
+        <li class="mb-2">Stay hydrated during fasts</li>
+        <li class="mb-2">Eat nutritious foods during eating windows</li>
+        <li>Listen to your body and adjust as needed</li>
+    </ul>
+
+    <h2 class="mb-4 mt-4">What Can Be Consumed During Fasting?</h2>
+    <p class="fs-6">During fasting periods, stick to zero calorie beverages:</p>
+    <ul class="fs-6">
+        <li class="mb-2">Water</li>
+        <li class="mb-2">Black coffee (without sugar or cream)</li>
+        <li class="mb-2">Unsweetened tea</li>
+        <li>Zero-calorie beverages</li>
+    </ul>
+
+    <h2 class="mb-4 mt-4">How to Enable Notifications?</h2>
+    <ol class="fs-6">
+        <li class="mb-2">Click the bell icon near the fasting timer.</li>
+        <li class="mb-2">In the Milestones Modal, toggle "Enable Notifications" switch.</li>
+        <li class="mb-2">Your browser will likely show a pop-up asking for permission to send notifications. Click "Allow" or "Yes" to grant permission.</li>
+        <li class="mb-2">The toggle should now be switched on, indicating notifications are enabled.</li>
+        <li>Select which milestones you want notifications for or add custom.</li>
+    </ol>
+
+    <h2 class="mb-4 mt-4">Not Receiving Notifications?</h2>
+    <p class="fs-6">Check if notifications are enabled in the app:</p>
+    <ul class="fs-6">
+        <li class="mb-2">Click the "Fasting Milestones" bell icon</li>
+        <li>Ensure the "Enable Notifications" switch is on</li>
+    </ul>
+    <p class="fs-6">Verify browser settings:</p>
+    <ul class="fs-6">
+        <li class="mb-2">Open your browser settings</li>
+        <li class="mb-2">Find site permissions or notifications</li>
+        <li>Allow notifications for the Fasting Tracker site</li>
+    </ul>
+    <p class="fs-6">Check device settings:</p>
+    <ul class="fs-6">
+        <li class="mb-2">Open your device's settings</li>
+        <li class="mb-2">Go to notifications</li>
+        <li>Ensure they're enabled for your browser</li>
+    </ul>
+    <p class="fs-6">Try these fixes:</p>
+    <ul class="fs-6">
+        <li class="mb-2">Refresh the page</li>
+        <li class="mb-2">Restart your browser</li>
+        <li class="mb-2">Clear browser cache</li>
+        <li>Use a different browser</li>
+    </ul>
+
+    <p class="h2 mb-4 mt-4">Important:</p>
+    <p class="fs-6">This is only an intermittent fasting tool and should not replace professional medical advice. Always consult a healthcare professional before starting any fasting regimen, especially if you have existing health conditions, are pregnant, or are taking medications.</p>
+</article>
+
+                <div class="mt-5">
+            <div class="share-container border-top">
+                <h3 class="h2 mb-4 mt-4">Share</h3>
+                <div class="share-buttons">
+                    <button id="facebook-share" aria-label="facebook" class="btn btn-sm btn-social-outline">
+                        <svg viewBox="0 0 64 64" width="32" height="32">
+                            <circle cx="32" cy="32" r="31" fill="#3b5998"></circle>
+                            <path d="M34.1,47V33.3h4.6l0.7-5.3h-5.3v-3.4c0-1.5,0.4-2.6,2.6-2.6l2.8,0v-4.8c-0.5-0.1-2.2-0.2-4.1-0.2 c-4.1,0-6.9,2.5-6.9,7V28H24v5.3h4.6V47H34.1z" fill="white"></path>
+                        </svg>
+                    </button>
+
+                    <button id="twitter-share" aria-label="twitter" class="btn btn-sm btn-social-outline">
+                        <svg viewBox="0 0 64 64" width="32" height="32">
+                            <circle cx="32" cy="32" r="31" fill="#00aced"></circle>
+                            <path d="M48,22.1c-1.2,0.5-2.4,0.9-3.8,1c1.4-0.8,2.4-2.1,2.9-3.6c-1.3,0.8-2.7,1.3-4.2,1.6 C41.7,19.8,40,19,38.2,19c-3.6,0-6.6,2.9-6.6,6.6c0,0.5,0.1,1,0.2,1.5c-5.5-0.3-10.3-2.9-13.5-6.9c-0.6,1-0.9,2.1-0.9,3.3 c0,2.3,1.2,4.3,2.9,5.5c-1.1,0-2.1-0.3-3-0.8c0,0,0,0.1,0,0.1c0,3.2,2.3,5.8,5.3,6.4c-0.6,0.1-1.1,0.2-1.7,0.2c-0.4,0-0.8,0-1.2-0.1 c0.8,2.6,3.3,4.5,6.1,4.6c-2.2,1.8-5.1,2.8-8.2,2.8c-0.5,0-1.1,0-1.6-0.1c2.9,1.9,6.4,2.9,10.1,2.9c12.1,0,18.7-10,18.7-18.7 c0-0.3,0-0.6,0-0.8C46,24.5,47.1,23.4,48,22.1z" fill="white"></path>
+                        </svg>
+                    </button>
+
+                    <button id="linkedin-share" aria-label="linkedin" class="btn btn-sm btn-social-outline">
+                        <svg viewBox="0 0 64 64" width="32" height="32">
+                            <circle cx="32" cy="32" r="31" fill="#007fb1"></circle>
+                            <path d="M20.4,44h5.4V26.6h-5.4V44z M23.1,18c-1.7,0-3.1,1.4-3.1,3.1c0,1.7,1.4,3.1,3.1,3.1 c1.7,0,3.1-1.4,3.1-3.1C26.2,19.4,24.8,18,23.1,18z M39.5,26.2c-2.6,0-4.4,1.4-5.1,2.8h-0.1v-2.4h-5.2V44h5.4v-8.6 c0-2.3,0.4-4.5,3.2-4.5c2.8,0,2.8,2.6,2.8,4.6V44H46v-9.5C46,29.8,45,26.2,39.5,26.2z" fill="white"></path>
+                        </svg>
+                    </button>
+
+                    <button id="reddit-share" aria-label="reddit" class="btn btn-sm btn-social-outline">
+                        <svg viewBox="0 0 64 64" width="32" height="32">
+                            <circle cx="32" cy="32" r="31" fill="#ff4500"></circle>
+                            <path d="m 52.8165,31.942362 c 0,-2.4803 -2.0264,-4.4965 -4.5169,-4.4965 -1.2155,0 -2.3171,0.4862 -3.128,1.2682 -3.077,-2.0247 -7.2403,-3.3133 -11.8507,-3.4782 l 2.5211,-7.9373 6.8272,1.5997 -0.0102,0.0986 c 0,2.0281 1.6575,3.6771 3.6958,3.6771 2.0366,0 3.6924,-1.649 3.6924,-3.6771 0,-2.0281 -1.6575,-3.6788 -3.6924,-3.6788 -1.564,0 -2.8968,0.9758 -3.4357,2.3443 l -7.3593,-1.7255 c -0.3213,-0.0782 -0.6477,0.1071 -0.748,0.4233 L 32,25.212062 c -4.8246,0.0578 -9.1953,1.3566 -12.41,3.4425 -0.8058,-0.7446 -1.8751,-1.2104 -3.0583,-1.2104 -2.4905,0 -4.5152,2.0179 -4.5152,4.4982 0,1.649 0.9061,3.0787 2.2389,3.8607 -0.0884,0.4794 -0.1462,0.9639 -0.1462,1.4569 0,6.6487 8.1736,12.0581 18.2223,12.0581 10.0487,0 18.224,-5.4094 18.224,-12.0581 0,-0.4658 -0.0493,-0.9248 -0.1275,-1.377 1.4144,-0.7599 2.3885,-2.2304 2.3885,-3.9406 z m -29.2808,3.0872 c 0,-1.4756 1.207,-2.6775 2.6894,-2.6775 1.4824,0 2.6877,1.2019 2.6877,2.6775 0,1.4756 -1.2053,2.6758 -2.6877,2.6758 -1.4824,0 -2.6894,-1.2002 -2.6894,-2.6758 z m 15.4037,7.9373 c -1.3549,1.3481 -3.4816,2.0043 -6.5008,2.0043 l -0.0221,-0.0051 -0.0221,0.0051 c -3.0209,0 -5.1476,-0.6562 -6.5008,-2.0043 -0.2465,-0.2448 -0.2465,-0.6443 0,-0.8891 0.2465,-0.2465 0.6477,-0.2465 0.8942,0 1.105,1.0999 2.9393,1.6337 5.6066,1.6337 l 0.0221,0.0051 0.0221,-0.0051 c 2.6673,0 4.5016,-0.5355 5.6066,-1.6354 0.2465,-0.2465 0.6477,-0.2448 0.8942,0 0.2465,0.2465 0.2465,0.6443 0,0.8908 z m -0.3213,-5.2615 c -1.4824,0 -2.6877,-1.2002 -2.6877,-2.6758 0,-1.4756 1.2053,-2.6775 2.6877,-2.6775 1.4824,0 2.6877,1.2019 2.6877,2.6775 0,1.4756 -1.2053,2.6758 -2.6877,2.6758 z" fill="white"></path>
+                        </svg>
+                    </button>
+
+                    <button id="whatsapp-share" aria-label="whatsapp" class="btn btn-sm btn-social-outline">
+                        <svg viewBox="0 0 64 64" width="32" height="32">
+                            <circle cx="32" cy="32" r="31" fill="#25D366"></circle>
+                            <path d="m42.32286,33.93287c-0.5178,-0.2589 -3.04726,-1.49644 -3.52105,-1.66732c-0.4712,-0.17346 -0.81554,-0.2589 -1.15987,0.2589c-0.34175,0.51004 -1.33075,1.66474 -1.63108,2.00648c-0.30032,0.33658 -0.60064,0.36247 -1.11327,0.12945c-0.5178,-0.2589 -2.17994,-0.80259 -4.14759,-2.56312c-1.53269,-1.37217 -2.56312,-3.05503 -2.86603,-3.57283c-0.30033,-0.5178 -0.03366,-0.80259 0.22524,-1.06149c0.23301,-0.23301 0.5178,-0.59547 0.7767,-0.90616c0.25372,-0.31068 0.33657,-0.5178 0.51262,-0.85437c0.17088,-0.36246 0.08544,-0.64725 -0.04402,-0.90615c-0.12945,-0.2589 -1.15987,-2.79613 -1.58964,-3.80584c-0.41424,-1.00971 -0.84142,-0.88027 -1.15987,-0.88027c-0.29773,-0.02588 -0.64208,-0.02588 -0.98382,-0.02588c-0.34693,0 -0.90616,0.12945 -1.37736,0.62136c-0.4712,0.5178 -1.80194,1.76053 -1.80194,4.27186c0,2.51134 1.84596,4.945 2.10227,5.30747c0.2589,0.33657 3.63497,5.51458 8.80262,7.74113c1.23237,0.5178 2.1903,0.82848 2.94111,1.08738c1.23237,0.38836 2.35599,0.33657 3.24402,0.20712c0.99159,-0.15534 3.04985,-1.24272 3.47963,-2.45956c0.44013,-1.21683 0.44013,-2.22654 0.31068,-2.45955c-0.12945,-0.23301 -0.46601,-0.36247 -0.98382,-0.59548m-9.40068,12.84407l-0.02589,0c-3.05503,0 -6.08417,-0.82849 -8.72495,-2.38189l-0.62136,-0.37023l-6.47252,1.68286l1.73463,-6.29129l-0.41424,-0.64725c-1.70875,-2.71846 -2.6149,-5.85116 -2.6149,-9.07706c0,-9.39809 7.68934,-17.06155 17.15993,-17.06155c4.58253,0 8.88029,1.78642 12.11655,5.02268c3.23625,3.21036 5.02267,7.50812 5.02267,12.06476c-0.0078,9.3981 -7.69712,17.06155 -17.14699,17.06155m14.58906,-31.58846c-3.93529,-3.80584 -9.1133,-5.95471 -14.62789,-5.95471c-11.36055,0 -20.60848,9.2065 -20.61625,20.52564c0,3.61684 0.94757,7.14565 2.75211,10.26282l-2.92557,10.63564l10.93337,-2.85309c3.0136,1.63108 6.4052,2.4958 9.85634,2.49839l0.01037,0c11.36574,0 20.61884,-9.2091 20.62403,-20.53082c0,-5.48093 -2.14111,-10.64081 -6.03239,-14.51915" fill="white"></path>
+                        </svg>
+                    </button>
+
+                    <button id="telegram-share" aria-label="telegram" class="btn btn-sm btn-social-outline">
+                        <svg viewBox="0 0 64 64" width="32" height="32">
+                            <circle cx="32" cy="32" r="31" fill="#37aee2"></circle>
+                            <path d="m45.90873,15.44335c-0.6901,-0.0281 -1.37668,0.14048 -1.96142,0.41265c-0.84989,0.32661 -8.63939,3.33986 -16.5237,6.39174c-3.9685,1.53296 -7.93349,3.06593 -10.98537,4.24067c-3.05012,1.1765 -5.34694,2.05098 -5.4681,2.09312c-0.80775,0.28096 -1.89996,0.63566 -2.82712,1.72788c-0.23354,0.27218 -0.46884,0.62161 -0.58825,1.10275c-0.11941,0.48114 -0.06673,1.09222 0.16682,1.5716c0.46533,0.96052 1.25376,1.35737 2.18443,1.71383c3.09051,0.99037 6.28638,1.93508 8.93263,2.8236c0.97632,3.44171 1.91401,6.89571 2.84116,10.34268c0.30554,0.69185 0.97105,0.94823 1.65764,0.95525l-0.00351,0.03512c0,0 0.53908,0.05268 1.06412,-0.07375c0.52679,-0.12292 1.18879,-0.42846 1.79109,-0.99212c0.662,-0.62161 2.45836,-2.38812 3.47683,-3.38552l7.6736,5.66477l0.06146,0.03512c0,0 0.84989,0.59703 2.09312,0.68132c0.62161,0.04214 1.4399,-0.07726 2.14229,-0.59176c0.70766,-0.51626 1.1765,-1.34683 1.396,-2.29506c0.65673,-2.86224 5.00979,-23.57745 5.75257,-27.00686l-0.02107,0.08077c0.51977,-1.93157 0.32837,-3.70159 -0.87096,-4.74991c-0.60054,-0.52152 -1.2924,-0.7498 -1.98425,-0.77965l0,0.00176zm-0.2072,3.29069c0.04741,0.0439 0.0439,0.0439 0.00351,0.04741c-0.01229,-0.00351 0.14048,0.2072 -0.15804,1.32576l-0.01229,0.04214l-0.00878,0.03863c-0.75858,3.50668 -5.15554,24.40802 -5.74203,26.96472c-0.08077,0.34417 -0.11414,0.31959 -0.09482,0.29852c-0.1756,-0.02634 -0.50045,-0.16506 -0.52679,-0.1756l-13.13468,-9.70175c4.4988,-4.33199 9.09945,-8.25307 13.744,-12.43229c0.8218,-0.41265 0.68483,-1.68573 -0.29852,-1.70681c-1.04305,0.24584 -1.92279,0.99564 -2.8798,1.47502c-5.49971,3.2626 -11.11882,6.13186 -16.55882,9.49279c-2.792,-0.97105 -5.57873,-1.77704 -8.15298,-2.57601c2.2336,-0.89555 4.00889,-1.55579 5.75608,-2.23009c3.05188,-1.1765 7.01687,-2.7042 10.98537,-4.24067c7.94051,-3.06944 15.92667,-6.16346 16.62028,-6.43037l0.05619,-0.02283l0.05268,-0.02283c0.19316,-0.0878 0.30378,-0.09658 0.35471,-0.10009c0,0 -0.01756,-0.05795 -0.00351,-0.04566l-0.00176,0zm-20.91715,22.0638l2.16687,1.60145c-0.93418,0.91311 -1.81743,1.77353 -2.45485,2.38812l0.28798,-3.98957" fill="white"></path>
+                        </svg>
+                    </button>
+
+                    <button id="email-share" aria-label="email" class="btn btn-sm btn-social-outline">
+                        <svg viewBox="0 0 64 64" width="32" height="32">
+                            <circle cx="32" cy="32" r="31" fill="#7f7f7f"></circle>
+                            <path d="M17,22v20h30V22H17z M41.1,25L32,32.1L22.9,25H41.1z M20,39V26.6l12,9.3l12-9.3V39H20z" fill="white"></path>
+                        </svg>
+                    </button>
+
+                </div>
+                <div class="mt-4">
+                    <div class="copy-url mb-4">
+                        <button class="btn btn-outline-primary btn-sm" id="copyUrlBtn">Copy Page URL</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+            </main>
+
+    <footer class="py-5">
+        <div class="container text-center">
+            <p class="mb-0 text-body-secondary">© 2024 IFFasting.com</p>
+
+            
+            <ul class="list-unstyled list-inline small mt-2 mb-0">
+
+                                <li class="list-inline-item me-0">
+                    <a href="https://iffasting.com/privacy-policy/" class="nav-link px-2 text-body-secondary">
+                        Privacy policy
+                    </a>
+                </li>
+                                <li class="list-inline-item me-0">
+                    <a href="https://iffasting.com/terms-of-service/" class="nav-link px-2 text-body-secondary">
+                        Terms Of Service
+                    </a>
+                </li>
+                                <li class="list-inline-item me-0">
+                    <a href="https://iffasting.com/contact-us/" class="nav-link px-2 text-body-secondary">
+                        Contact us
+                    </a>
+                </li>
+                            </ul>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+    <script src="https://iffasting.com/js/script.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        let timer;
+        let fastingStartTime;
+        let fastingEndTime;
+        let currentFastingPlan = '16-8';
+        let isFasting = false;
+        let showElapsedTime = true;
+        let waterAmount = 0;
+        let waterIncrement = 250;
+        let waterGoal = 2500;
+        let weightHistory = [];
+        let currentWeight = 0;
+        let goalWeight = 0;
+        let fastingHistory = [];
+        let isMetric = true;
+        let weightUnit = 'kg';
+        let heightUnit = 'cm';
+        let lastWaterResetDate = null;
+        let age = 0;
+        let gender = 'Male';
+        let height = 0;
+        let milestones = [];
+        let notificationsEnabled = false;
+        let defaultMilestones = [{
+                id: 'milestoneHalfway',
+                name: 'Halfway',
+                enabled: false,
+                hours: 0,
+                message: ''
+            },
+            {
+                id: 'milestoneOneHourLeft',
+                name: '1 Hour Left',
+                enabled: false,
+                hours: 0,
+                message: ''
+            },
+            {
+                id: 'milestoneFastingEnd',
+                name: 'Fasting End',
+                enabled: false,
+                hours: 0,
+                message: ''
+            }
+        ];
+
+        function loadData() {
+            const savedData = JSON.parse(localStorage.getItem('fastingTrackerData')) || {};
+            currentFastingPlan = savedData.currentFastingPlan || '16-8';
+            isFasting = savedData.isFasting || false;
+            showElapsedTime = savedData.showElapsedTime !== undefined ? savedData.showElapsedTime : true;
+            waterAmount = savedData.waterAmount || 0;
+            waterIncrement = savedData.waterIncrement || 250;
+            waterGoal = savedData.waterGoal || 2500;
+            weightHistory = savedData.weightHistory || [];
+            currentWeight = savedData.currentWeight || 0;
+            goalWeight = savedData.goalWeight || 0;
+            fastingHistory = savedData.fastingHistory || [];
+            isMetric = savedData.isMetric !== undefined ? savedData.isMetric : true;
+            weightUnit = isMetric ? 'kg' : 'lb';
+            heightUnit = isMetric ? 'cm' : 'in';
+            lastWaterResetDate = savedData.lastWaterResetDate ? new Date(savedData.lastWaterResetDate) : null;
+            age = savedData.age || 0;
+            gender = savedData.gender || 'Male';
+            height = savedData.height || 170;
+            milestones = savedData.milestones || [];
+            notificationsEnabled = savedData.notificationsEnabled || false;
+            defaultMilestones = savedData.defaultMilestones || defaultMilestones;
+
+            if (savedData.fastingStartTime && isFasting) {
+                fastingStartTime = moment(savedData.fastingStartTime);
+                fastingEndTime = moment(savedData.fastingEndTime);
+                startFasting(false);
+            } else {
+                stopFasting();
+            }
+
+            $('#bmiHeight').val(height);
+            $('#bmiWeight').val(currentWeight);
+            $('#bmiAge').val(age);
+            $(`#bmi${gender.charAt(0).toUpperCase() + gender.slice(1)}`).prop('checked', true);
+            $('#enableNotifications').prop('checked', notificationsEnabled);
+
+            updateMilestones();
+            updateDefaultMilestonesUI();
+            updateFastingInfo();
+            updateWaterTracker();
+            updateWeightTracker();
+            updateFastingHistory();
+            updateWeightHistoryList();
+            updateUnitDisplay();
+            updateGenderDisplay();
+            updateBMI();
+        }
+
+        function saveData() {
+            const dataToSave = {
+                currentFastingPlan,
+                isFasting,
+                fastingStartTime: fastingStartTime ? fastingStartTime.toISOString() : null,
+                fastingEndTime: fastingEndTime ? fastingEndTime.toISOString() : null,
+                showElapsedTime,
+                waterAmount,
+                waterIncrement,
+                waterGoal,
+                weightHistory,
+                currentWeight,
+                goalWeight,
+                fastingHistory,
+                isMetric,
+                lastWaterResetDate,
+                age,
+                gender,
+                height,
+                milestones,
+                notificationsEnabled,
+                defaultMilestones
+            };
+            localStorage.setItem('fastingTrackerData', JSON.stringify(dataToSave));
+        }
+
+        function updateFastingInfo() {
+            $('#fastingType').text(`${currentFastingPlan} Intermittent Fasting`);
+            $('#fastingGoal').text(currentFastingPlan);
+            if (fastingStartTime) {
+                $('#startTime').text(formatTime(fastingStartTime));
+                $('#endTime').text(formatTime(fastingEndTime));
+            } else {
+                $('#startTime').text('--:--');
+                $('#endTime').text('--:--');
+            }
+            updateFastingStatus();
+        }
+
+        function updateFastingStatus() {
+            const statusElement = $('#fastingStatus');
+            if (isFasting) {
+                if (moment().isBefore(fastingStartTime)) {
+                    statusElement.html('<i class="fas fa-clock"></i> Fasting scheduled');
+                    statusElement.removeClass('text-warning text-success').addClass('text-primary');
+                } else {
+                    statusElement.html('<i class="fas fa-bolt"></i> You are fasting now');
+                    statusElement.removeClass('text-success text-primary').addClass('text-warning');
+                }
+                $('#startStopFasting').text('Stop Fasting').removeClass('btn-primary').addClass('btn-danger');
+            } else {
+                statusElement.html('<i class="fas fa-play-circle"></i> Push start when you&#039;re ready');
+                statusElement.removeClass('text-warning text-success').addClass('text-primary');
+                $('#startStopFasting').text('Start Fasting').removeClass('btn-danger').addClass('btn-primary');
+            }
+        }
+
+        function startFasting(isNewFast) {
+            isFasting = true;
+            if (isNewFast) {
+                fastingStartTime = moment();
+                updateFastingEndTime();
+                if (notificationsEnabled) {
+                    sendNotification("Fasting Started", "Your fasting period has begun. Good luck!");
+                }
+            }
+            clearInterval(timer);
+            timer = setInterval(updateTimer, 1000);
+            updateFastingInfo();
+            updateStatusIcons();
+            saveData();
+        }
+
+        function updateFastingEndTime() {
+            const [fastHours, _] = currentFastingPlan.split('-');
+            fastingEndTime = moment(fastingStartTime).add(parseInt(fastHours), 'hours');
+        }
+
+        function stopFasting() {
+            if (isFasting) {
+                $('#finishFastModal').modal('show');
+            } else {
+                clearFastingData();
+            }
+        }
+
+        function clearFastingData() {
+            isFasting = false;
+            clearInterval(timer);
+            fastingStartTime = null;
+            fastingEndTime = null;
+            updateFastingInfo();
+            updateTimer();
+            updateStatusIcons();
+            saveData();
+        }
+
+        function updateTimer() {
+            if (!isFasting || !fastingStartTime) {
+                $('#fastingTimer').text('00:00:00');
+                updateTimerProgress(0);
+                return;
+            }
+
+            const now = moment();
+            if (now.isBefore(fastingStartTime)) {
+                const timeToStart = moment.duration(fastingStartTime.diff(now));
+                const hours = Math.floor(timeToStart.asHours()).toString().padStart(2, '0');
+                const minutes = timeToStart.minutes().toString().padStart(2, '0');
+                const seconds = timeToStart.seconds().toString().padStart(2, '0');
+                $('#fastingTimer').text(`- ${hours}:${minutes}:${seconds}`);
+                updateTimerProgress(0);
+                return;
+            }
+
+            const elapsed = moment.duration(now.diff(fastingStartTime));
+            const remaining = moment.duration(fastingEndTime.diff(now));
+            const duration = showElapsedTime ? elapsed : remaining;
+
+            const hours = Math.floor(duration.asHours()).toString().padStart(2, '0');
+            const minutes = duration.minutes().toString().padStart(2, '0');
+            const seconds = duration.seconds().toString().padStart(2, '0');
+            $('#fastingTimer').text(`${hours}:${minutes}:${seconds}`);
+
+            const elapsedHours = Math.floor(elapsed.asHours()).toString().padStart(2, '0');
+            const elapsedMinutes = elapsed.minutes().toString().padStart(2, '0');
+            const elapsedSeconds = elapsed.seconds().toString().padStart(2, '0');
+            $('#totalFastDuration').text(`${elapsedHours}:${elapsedMinutes}:${elapsedSeconds}`);
+
+            const progress = Math.min(elapsed.asMilliseconds() / fastingEndTime.diff(fastingStartTime), 1);
+            updateTimerProgress(progress);
+
+            updateStatusIcons();
+            checkMilestones();
+        }
+
+        function updateTimerProgress(progress) {
+            const circle = document.querySelector('.fasting-progress-circle-progress');
+            const radius = circle.r.baseVal.value;
+            const circumference = radius * 2 * Math.PI;
+            const offset = circumference - progress * circumference;
+            circle.style.strokeDasharray = `${circumference} ${circumference}`;
+            circle.style.strokeDashoffset = offset;
+
+            if (progress >= 1) {
+                circle.style.stroke = '#28a745';
+            } else {
+                circle.style.stroke = '';
+            }
+        }
+
+        function formatTime(time) {
+            if (!time) return '--:--';
+
+            const now = moment();
+            if (time.isSame(now, 'day')) {
+                return `Today, ${time.format('HH:mm')}`;
+            } else if (time.isSame(now.clone().add(1, 'day'), 'day')) {
+                return `Tomorrow, ${time.format('HH:mm')}`;
+            } else if (time.isSame(now.clone().subtract(1, 'day'), 'day')) {
+                return `Yesterday, ${time.format('HH:mm')}`;
+            } else {
+                return time.format('MMM D, HH:mm');
+            }
+        }
+
+        function updateStatusIcons() {
+            if (isFasting && fastingStartTime) {
+                const elapsed = moment().diff(fastingStartTime, 'hours');
+                $('.status-icon').each(function() {
+                    const hours = parseInt($(this).data('hours'));
+                    if (elapsed >= hours) {
+                        $(this).addClass('active');
+                    } else {
+                        $(this).removeClass('active');
+                    }
+                });
+            } else {
+                $('.status-icon').removeClass('active');
+            }
+        }
+
+        function updateWaterTracker() {
+            $('#waterAmount').text(waterAmount);
+            $('#waterGoal').text(waterGoal);
+            const progress = (waterAmount / waterGoal) * 100;
+            $('#waterFill').css('height', `${progress}%`);
+            $('#waterPercentage').text(`${Math.round(progress)}%`);
+        }
+
+        function updateWeightTracker() {
+            $('#currentWeight').text(displayWeight(currentWeight)).data('weight', currentWeight);
+            $('.weight-unit').text(weightUnit);
+            $('#startWeight').text(weightHistory.length > 0 ? displayWeight(weightHistory[0].weight) : displayWeight(currentWeight)).data('weight', weightHistory.length > 0 ? weightHistory[0].weight : currentWeight);
+            $('#goalWeight').text(goalWeight ? displayWeight(goalWeight) : '--').data('weight', goalWeight || 0);
+            updateBMI();
+            updateWeightHistoryList();
+        }
+
+        function displayWeight(weight) {
+            return isMetric ? weight.toFixed(1) : kgToLbs(weight).toFixed(1);
+        }
+
+        function updateWeightHistoryList() {
+            const listElement = $('#weightHistoryList');
+
+            if (weightHistory.length === 0) {
+                listElement.html('<p class="text-muted text-center">No weight history available</p>');
+                return;
+            }
+
+            let listHtml = '';
+            weightHistory.forEach((entry, index) => {
+                const weightValue = displayWeight(entry.weight);
+                let changeHtml = '';
+                if (index < weightHistory.length - 1) {
+                    const prevWeight = weightHistory[index + 1].weight;
+                    const change = entry.weight - prevWeight;
+                    const changeClass = change > 0 ? 'text-danger' : 'text-success';
+                    const changeIcon = change > 0 ? '▲' : '▼';
+                    changeHtml = `<span class="${changeClass}">${changeIcon} ${Math.abs(displayWeight(change))} ${weightUnit}</span>`;
+                }
+                listHtml += `
+                <div class="weight-list-item">
+                    <span>${moment(entry.date).format('MMM D, YYYY')}</span>
+                    <span class="weight-value" data-weight="${entry.weight}">${weightValue} ${weightUnit} ${changeHtml}</span>
+                </div>
+            `;
+            });
+            listElement.html(listHtml);
+        }
+
+        function formatDuration(duration) {
+            const hours = Math.floor(duration.asHours()).toString().padStart(2, '0');
+            const minutes = duration.minutes().toString().padStart(2, '0');
+            const seconds = duration.seconds().toString().padStart(2, '0');
+            return `${hours}:${minutes}:${seconds}`;
+        }
+
+        function updateFastingHistory() {
+            const historyElement = $('#fastingHistoryList');
+            if (fastingHistory.length === 0) {
+                historyElement.html('<p class="text-muted text-center">No fasting history yet</p>');
+            } else {
+                const historyHtml = fastingHistory.map((fast, index) => {
+                    const duration = moment.duration(moment(fast.end).diff(moment(fast.start)));
+                    return `
+            <div class="fasting-history-item">
+                <div class="fasting-history-icon">
+                    ${getMoodIcon(fast.mood)}
+                </div>
+                <div class="fasting-history-details">
+                    <div class="fasting-history-date">${moment(fast.start).format('MMM D, YYYY')}</div>
+                    <div class="fasting-history-duration">${formatDuration(duration)} / ${fast.plan.split('-')[0]}h</div>
+                </div>
+            </div>
+        `;
+                }).join('');
+                historyElement.html(historyHtml);
+            }
+        }
+
+        function updateMilestoneToggles() {
+            $('.default-milestone, .custom-milestone').prop('disabled', !notificationsEnabled);
+            if (!notificationsEnabled) {
+                $('.default-milestone, .custom-milestone').prop('checked', false);
+            }
+        }
+
+        function getMoodIcon(mood) {
+            const moodIcons = {
+                'Great': '<i class="far fa-grin" style="color: #4CAF50;"></i>',
+                'Good': '<i class="far fa-smile" style="color: #8BC34A;"></i>',
+                'Okay': '<i class="far fa-meh" style="color: #FFC107;"></i>',
+                'Not Good': '<i class="far fa-frown" style="color: #FF9800;"></i>',
+                'Bad': '<i class="far fa-angry" style="color: #F44336;"></i>'
+            };
+            return moodIcons[mood] || '<i class="far fa-meh" style="color: #FFC107;"></i>';
+        }
+
+        function kgToLbs(kg) {
+            return kg * 2.20462;
+        }
+
+        function lbsToKg(lbs) {
+            return lbs / 2.20462;
+        }
+
+        function cmToIn(cm) {
+            return cm / 2.54;
+        }
+
+        function inToCm(inches) {
+            return inches * 2.54;
+        }
+
+        function updateUnitDisplay() {
+            $('input[name="unitSwitcher"]').prop('checked', function() {
+                return (isMetric && $(this).attr('id') === 'metricUnits') ||
+                    (!isMetric && $(this).attr('id') === 'imperialUnits');
+            });
+
+            $('.weight-unit, #modalWeightUnit, #bmiWeightUnit, #goalWeightUnit').text(weightUnit);
+            $('#bmiHeightUnit').text(heightUnit);
+
+            updateWeightDisplay();
+            updateHeightDisplay();
+            updateBMIUnitLabels();
+        }
+
+        function updateWeightDisplay() {
+            $('.weight-value').each(function() {
+                let weight = parseFloat($(this).data('weight'));
+                if (!isNaN(weight)) {
+                    $(this).text(displayWeight(weight));
+                }
+            });
+            $('#currentWeight').text(displayWeight(currentWeight));
+        }
+
+        function updateHeightDisplay() {
+            if (isMetric) {
+                $('.metric-input').show();
+                $('.imperial-height').hide();
+                $('#bmiHeight').val(height);
+            } else {
+                $('.metric-input').hide();
+                $('.imperial-height').show();
+                const inches = cmToIn(height);
+                $('#heightFeet').val(Math.floor(inches / 12));
+                $('#heightInches').val((inches % 12).toFixed(1));
+            }
+        }
+
+        function updateBMIUnitLabels() {
+            $('#bmiWeightUnit').text(weightUnit);
+            $('#bmiHeightUnit').text(heightUnit);
+        }
+
+        function calculateBMI(weight, height, age, gender) {
+            let bmi;
+            if (isMetric) {
+                bmi = weight / ((height / 100) * (height / 100));
+            } else {
+                bmi = (weight * 703) / (height * height);
+            }
+
+            return {
+                bmi: bmi.toFixed(1),
+                category: getBMICategory(bmi, age, gender),
+                color: getBMIColor(getBMICategory(bmi, age, gender))
+            };
+        }
+
+        function getBMICategory(bmi, age, gender) {
+            if (age < 20) {
+                return getBMICategoryForChildrenCDC(bmi, age, gender);
+            } else if (age >= 65) {
+                return getBMICategoryForSeniors(bmi);
+            } else {
+                return getBMICategoryForAdults(bmi);
+            }
+        }
+
+        function getBMICategoryForAdults(bmi) {
+            if (bmi < 18.5) return "Underweight";
+            if (bmi < 25) return "Normal weight";
+            if (bmi < 30) return "Overweight";
+            return "Obese";
+        }
+
+        function getBMICategoryForChildrenCDC(bmi, age, gender) {
+            const percentile = calculateBMIPercentile(bmi, age, gender);
+
+            if (percentile < 5) return "Underweight";
+            if (percentile < 85) return "Normal weight";
+            if (percentile < 95) return "Overweight";
+            return "Obese";
+        }
+
+        function calculateBMIPercentile(bmi, age, gender) {
+            const medianBMI = gender === 'male' ? 20 : 19.5;
+            const stdDev = 2;
+
+            const zScore = (bmi - medianBMI) / stdDev;
+            return 100 * (0.5 + 0.5 * Math.erf(zScore / Math.sqrt(2)));
+        }
+
+        function getBMICategoryForSeniors(bmi) {
+            if (bmi < 22) return "Underweight";
+            if (bmi < 27) return "Normal weight";
+            if (bmi < 30) return "Overweight";
+            return "Obese";
+        }
+
+        function getBMIColor(category) {
+            switch (category) {
+                case "Underweight":
+                    return "#3498db";
+                case "Normal weight":
+                    return "#2ecc71";
+                case "Overweight":
+                    return "#f1c40f";
+                case "Obese":
+                    return "#e74c3c";
+                default:
+                    return "#333";
+            }
+        }
+
+        function updateBMI() {
+            const weight = currentWeight;
+            const age = parseInt($('#bmiAge').val());
+            const gender = $('input[name="bmiGender"]:checked').attr('id') === 'bmiMale' ? 'Male' : 'Female';
+
+            if (weight && height && age) {
+                const bmiResult = calculateBMI(weight, height, age, gender);
+                $('#bmiResult').html(`Your BMI: ${bmiResult.bmi} <span style="color: ${bmiResult.color};">(${bmiResult.category})</span>`);
+                updateBMIMarker(parseFloat(bmiResult.bmi));
+            } else {
+                $('#bmiResult').text('Please enter weight, height, and age to calculate BMI');
+            }
+        }
+
+        function updateBMIMarker(bmi) {
+            let percentage;
+            if (bmi < 18.5) {
+                percentage = (bmi / 18.5) * 18.5;
+            } else if (bmi < 25) {
+                percentage = 18.5 + ((bmi - 18.5) / 6.5) * 25;
+            } else if (bmi < 30) {
+                percentage = 43.5 + ((bmi - 25) / 5) * 30;
+            } else {
+                percentage = 73.5 + Math.min(((bmi - 30) / 10) * 26.5, 26.5);
+            }
+            $('#bmiMarker').css('left', `${percentage}%`);
+        }
+
+        function checkAndResetWaterIntake() {
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+
+            if (!lastWaterResetDate || lastWaterResetDate < today) {
+                waterAmount = 0;
+                lastWaterResetDate = today;
+                updateWaterTracker();
+                saveData();
+            }
+        }
+
+        function completeFasting() {
+            if (moment().isBefore(fastingStartTime)) {
+                alert("The fast hasn&#039;t started yet. You cannot complete it at this time.");
+                return;
+            }
+            clearInterval(timer);
+            isFasting = false;
+            $('#finishFastModal').modal('show');
+            $('#shareAchievement').show();
+            if (notificationsEnabled) {
+                sendNotification("Fasting Completed", "Congratulations! You&#039;ve completed your fast.");
+            }
+        }
+
+        function handleNotificationPermission() {
+            if (!("Notification" in window)) {
+                alert("This browser does not support desktop notification");
+                return;
+            }
+
+            if (Notification.permission === "granted") {
+                notificationsEnabled = true;
+                $('#enableNotifications').prop('checked', true);
+                updateMilestoneToggles();
+                saveData();
+            } else if (Notification.permission === "denied") {
+                alert("You have blocked notifications. Please enable them in your browser settings to use this feature.");
+                $('#enableNotifications').prop('checked', false);
+                notificationsEnabled = false;
+                updateMilestoneToggles();
+            } else {
+                showNotificationPermissionModal();
+            }
+        }
+
+        function showNotificationPermissionModal() {
+            if (isFasting || $('#enableNotifications').prop('checked')) {
+                $('#notificationPermissionModal').modal('show');
+            }
+        }
+
+        function sendNotification(title, message) {
+            if (notificationsEnabled) {
+                try {
+                    new Notification(title, {
+                        body: message
+                    });
+                } catch (error) {
+                    console.error("Error sending notification:", error);
+                }
+            }
+        }
+
+        function updateMilestones() {
+            const [fastHours, _] = currentFastingPlan.split('-');
+            const totalFastingHours = parseInt(fastHours);
+
+            defaultMilestones = defaultMilestones.map(milestone => {
+                switch (milestone.id) {
+                    case 'milestoneHalfway':
+                        milestone.hours = Math.floor(totalFastingHours / 2);
+                        milestone.message = `You&#039;re halfway through your ${totalFastingHours}-hour fast!`;
+                        break;
+                    case 'milestoneOneHourLeft':
+                        milestone.hours = totalFastingHours - 1;
+                        milestone.message = "Only 1 hour left in your fast!";
+                        break;
+                    case 'milestoneFastingEnd':
+                        milestone.hours = totalFastingHours;
+                        milestone.message = `Congratulations! You&#039;ve completed your ${totalFastingHours}-hour fast!`;
+                        break;
+                }
+                return milestone;
+            });
+
+            updateMilestoneAlerts();
+        }
+
+        function updateMilestoneAlerts() {
+            const alertsContainer = $('#milestoneAlerts');
+            alertsContainer.empty();
+
+            defaultMilestones.forEach((milestone, index) => {
+                alertsContainer.append(`
+            <div class="milestone-item">
+                <div class="form-check milestone-toggle">
+                    <input class="form-check-input default-milestone" type="checkbox" id="${milestone.id}" ${milestone.enabled ? 'checked' : ''} ${notificationsEnabled ? '' : 'disabled'}>
+                    <label class="form-check-label" for="${milestone.id}">${milestone.name}</label>
+                </div>
+                <div class="milestone-details">
+                    <div class="milestone-hours">${milestone.hours} hours</div>
+                    <div class="milestone-message">${milestone.message}</div>
+                </div>
+            </div>
+        `);
+            });
+
+            milestones.forEach((milestone, index) => {
+                alertsContainer.append(`
+            <div class="milestone-item">
+                <div class="form-check milestone-toggle">
+                    <input class="form-check-input custom-milestone" type="checkbox" id="customMilestone${index}" ${milestone.enabled ? 'checked' : ''} ${notificationsEnabled ? '' : 'disabled'}>
+                    <label class="form-check-label" for="customMilestone${index}">${milestone.hours} hours</label>
+                </div>
+                <div class="milestone-details">
+                    <div class="milestone-message">${milestone.message}</div>
+                </div>
+                <button type="button" class="btn btn-sm btn-danger remove-milestone" data-index="${index}">Remove</button>
+            </div>
+        `);
+            });
+
+            updateMilestoneToggles();
+        }
+
+        function updateDefaultMilestonesUI() {
+            defaultMilestones.forEach(milestone => {
+                $(`#${milestone.id}`).prop('checked', milestone.enabled).prop('disabled', !notificationsEnabled);
+            });
+        }
+
+        function toggleDefaultMilestone(id) {
+            const milestone = defaultMilestones.find(m => m.id === id);
+            if (milestone) {
+                milestone.enabled = !milestone.enabled;
+                $(`#${id}`).prop('checked', milestone.enabled);
+                saveData();
+            }
+        }
+
+        function removeCustomMilestone(index) {
+            milestones.splice(index, 1);
+            updateMilestoneAlerts();
+            saveData();
+        }
+
+        function checkMilestones() {
+            if (isFasting && fastingStartTime) {
+                const elapsedHours = moment().diff(fastingStartTime, 'hours');
+
+                defaultMilestones.forEach(milestone => {
+                    if (milestone.enabled && elapsedHours === milestone.hours) {
+                        sendNotification("Fasting Milestone", milestone.message);
+                    }
+                });
+
+                milestones.forEach(milestone => {
+                    if (elapsedHours === milestone.hours) {
+                        sendNotification("Fasting Milestone", milestone.message);
+                    }
+                });
+            }
+        }
+
+        function shareAchievement() {
+            const achievementText = `I&#039;ve completed a ${currentFastingPlan} fast using Fasting Tracker!`;
+            const shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(achievementText)}`;
+            window.open(shareUrl, '_blank');
+        }
+
+        function updateGenderDisplay() {
+            $(`#bmi${gender.charAt(0).toUpperCase() + gender.slice(1)}`).prop('checked', true);
+        }
+
+        function errorHandler(func) {
+            return function() {
+                try {
+                    return func.apply(this, arguments);
+                } catch (error) {
+                    console.error("An error occurred:", error);
+                    alert("An unexpected error occurred. Please try again.");
+                }
+            };
+        }
+
+        $('#startStopFasting').click(errorHandler(function() {
+            if (isFasting) {
+                stopFasting();
+            } else {
+                startFasting(true);
+            }
+        }));
+
+        $('#timerToggle').click(errorHandler(function() {
+            showElapsedTime = !showElapsedTime;
+            updateTimer();
+            saveData();
+        }));
+
+        $('#editFast').click(errorHandler(function() {
+            $('#fastingPlan').val(currentFastingPlan);
+            $('#startDateTime').val(fastingStartTime ? fastingStartTime.format('YYYY-MM-DDTHH:mm') : moment().format('YYYY-MM-DDTHH:mm'));
+            $('#editFastModal').modal('show');
+        }));
+
+        $('#fastingPlan').change(errorHandler(function() {
+            if ($(this).val() === 'custom') {
+                $('#customPlanInputs').show();
+            } else {
+                $('#customPlanInputs').hide();
+            }
+        }));
+
+        $('#saveEditFast').click(errorHandler(function() {
+            const newPlan = $('#fastingPlan').val();
+            const newStartTime = moment($('#startDateTime').val());
+
+            if (newPlan === 'custom') {
+                const customHours = parseInt($('#customFastingHours').val());
+                if (customHours >= 12 && customHours <= 23) {
+                    currentFastingPlan = `${customHours}-${24 - customHours}`;
+                } else {
+                    alert('Custom fasting hours must be between 12 and 23.');
+                    return;
+                }
+            } else {
+                currentFastingPlan = newPlan;
+            }
+
+            if (newStartTime.isValid()) {
+                fastingStartTime = newStartTime;
+                updateFastingEndTime();
+
+                if (isFasting) {
+                    clearInterval(timer);
+                    timer = setInterval(updateTimer, 1000);
+                } else {
+                    startFasting(true);
+                }
+
+                updateFastingInfo();
+                updateTimer();
+                updateMilestones();
+                saveData();
+            } else {
+                alert('Please enter a valid start time.');
+                return;
+            }
+
+            $('#editFastModal').modal('hide');
+        }));
+
+        $('#saveFastingResults').click(errorHandler(function() {
+            const endTime = moment();
+            const duration = moment.duration(endTime.diff(fastingStartTime));
+            const fastDuration = formatDuration(duration);
+            const mood = $('.mood-icon.active').data('mood') || 'Not specified';
+            const notes = $('#fastingNotes').val();
+
+            fastingHistory.unshift({
+                start: fastingStartTime.format('YYYY-MM-DD HH:mm:ss'),
+                end: endTime.format('YYYY-MM-DD HH:mm:ss'),
+                duration: fastDuration,
+                plan: currentFastingPlan,
+                mood: mood,
+                notes: notes
+            });
+
+            updateFastingHistory();
+            clearFastingData();
+            $('#finishFastModal').modal('hide');
+            saveData();
+        }));
+
+        $('#increaseWater, #decreaseWater').click(errorHandler(function() {
+            const isIncrease = $(this).attr('id') === 'increaseWater';
+            waterAmount = Math.max(0, waterAmount + (isIncrease ? waterIncrement : -waterIncrement));
+            updateWaterTracker();
+            saveData();
+        }));
+
+        $('#waterSettings').click(errorHandler(function() {
+            $('#waterGoalInput').val(waterGoal);
+            $('#waterIncrementInput').val(waterIncrement);
+            $('#waterSettingsModal').modal('show');
+        }));
+
+        $('#saveWaterSettings').click(errorHandler(function() {
+            waterGoal = parseInt($('#waterGoalInput').val());
+            waterIncrement = parseInt($('#waterIncrementInput').val());
+            updateWaterTracker();
+            saveData();
+            $('#waterSettingsModal').modal('hide');
+        }));
+
+        $('#updateWeight').click(errorHandler(function() {
+            $('#newWeight').val(displayWeight(currentWeight));
+            $('#weightDate').val(moment().format('YYYY-MM-DD'));
+            $('#weightEntryModal').modal('show');
+        }));
+
+        $('#saveWeightEntry').click(errorHandler(function() {
+            let newWeight = parseFloat($('#newWeight').val());
+            const entryDate = moment($('#weightDate').val());
+            const notes = $('#weightNotes').val().trim();
+
+            if (!isNaN(newWeight) && entryDate.isValid()) {
+                if (!isMetric) {
+                    newWeight = lbsToKg(newWeight);
+                }
+
+                weightHistory.unshift({
+                    date: entryDate.toDate(),
+                    weight: newWeight,
+                    notes: notes
+                });
+
+                currentWeight = newWeight;
+                updateWeightTracker();
+                saveData();
+                $('#weightEntryModal').modal('hide');
+            } else {
+                alert('Please enter a valid weight and date.');
+            }
+        }));
+
+        $('#setWeightGoal').click(errorHandler(function() {
+            $('#weightGoal').val(goalWeight ? displayWeight(goalWeight) : '');
+            $('#setWeightGoalModal').modal('show');
+        }));
+
+        $('#saveWeightGoal').click(errorHandler(function() {
+            let newGoal = parseFloat($('#weightGoal').val());
+            if (!isNaN(newGoal)) {
+                if (!isMetric) {
+                    newGoal = lbsToKg(newGoal);
+                }
+                goalWeight = newGoal;
+                updateWeightTracker();
+                saveData();
+                $('#setWeightGoalModal').modal('hide');
+            } else {
+                alert('Please enter a valid weight goal.');
+            }
+        }));
+
+        $('#calculateBMI').click(errorHandler(function() {
+            const age = parseInt($('#bmiAge').val());
+            let weight = parseFloat($('#bmiWeight').val());
+            let height;
+            if (isMetric) {
+                height = parseFloat($('#bmiHeight').val());
+            } else {
+                const feet = parseInt($('#heightFeet').val()) || 0;
+                const inches = parseFloat($('#heightInches').val()) || 0;
+                height = feet * 12 + inches;
+            }
+            const gender = $('input[name="bmiGender"]:checked').attr('id') === 'bmiMale' ? 'Male' : 'Female';
+
+            if (!isNaN(age) && !isNaN(weight) && !isNaN(height)) {
+                const bmiResult = calculateBMI(weight, height, age, gender);
+                let resultText = `Your BMI: ${bmiResult.bmi} <span style="color: ${bmiResult.color};">(${bmiResult.category})</span><br>`;
+                if (age < 20) {
+                    const percentile = calculateBMIPercentile(parseFloat(bmiResult.bmi), age, gender).toFixed(1);
+                    resultText += `BMI Percentile: ${percentile}%<br>`;
+                }
+                resultText += `Age: ${age}, Gender: ${gender}`;
+
+                $('#bmiResult').html(resultText);
+                updateBMIMarker(parseFloat(bmiResult.bmi));
+
+                saveData();
+            } else {
+                alert('Please enter valid age, weight, and height.');
+            }
+        }));
+
+        $('input[name="unitSwitcher"]').change(errorHandler(function() {
+            isMetric = ($(this).attr('id') === 'metricUnits');
+            weightUnit = isMetric ? 'kg' : 'lb';
+            heightUnit = isMetric ? 'cm' : 'in';
+            updateUnitDisplay();
+            updateBMI();
+            saveData();
+        }));
+
+        $('.mood-selector .mood-icon').click(errorHandler(function() {
+            $('.mood-selector .mood-icon').removeClass('active');
+            $(this).addClass('active');
+        }));
+
+        $('#clearWeightHistory').click(errorHandler(function() {
+            if (confirm('Are you sure you want to clear the weight history? This action cannot be undone.')) {
+                weightHistory = [];
+                updateWeightTracker();
+                saveData();
+            }
+        }));
+
+        $('#clearFastingHistory').click(errorHandler(function() {
+            if (confirm('Are you sure you want to clear the fasting history? This action cannot be undone.')) {
+                fastingHistory = [];
+                updateFastingHistory();
+                saveData();
+            }
+        }));
+
+        $('#bmiHeight, #heightFeet, #heightInches').on('input', errorHandler(function() {
+            if (isMetric) {
+                height = parseFloat($('#bmiHeight').val()) || height;
+            } else {
+                const feet = parseInt($('#heightFeet').val()) || 0;
+                const inches = parseFloat($('#heightInches').val()) || 0;
+                height = inToCm(feet * 12 + inches);
+            }
+            updateBMI();
+            saveData();
+        }));
+
+        $('.status-icon').click(errorHandler(function() {
+            const hours = $(this).data('hours');
+            const title = $(this).attr('title');
+            let explanation = '';
+            switch (hours) {
+                case 12:
+                    explanation = "After 12 hours of fasting, your body starts to deplete glucose stores and shifts to burning fat for energy.";
+                    break;
+                case 14:
+                    explanation = "Around 14 hours into fasting, many people report improved mental clarity and focus due to the production of ketones.";
+                    break;
+                case 16:
+                    explanation = "At 16 hours, your body may show improvements in heart health markers, including reduced blood pressure and cholesterol levels.";
+                    break;
+                case 18:
+                    explanation = "After 18 hours, cellular repair processes are enhanced, including autophagy, where cells break down and recycle damaged components.";
+                    break;
+            }
+            $('#statusExplanation').html(`<strong>${title} (${hours} hours):</strong> ${explanation}`);
+        }));
+
+        $('#enableNotifications').change(errorHandler(function() {
+            if (this.checked) {
+                handleNotificationPermission();
+            } else {
+                notificationsEnabled = false;
+                updateMilestoneToggles();
+                saveData();
+            }
+        }));
+
+        $('#enableNotificationsModal').click(errorHandler(function() {
+            Notification.requestPermission().then(function(permission) {
+                if (permission === "granted") {
+                    notificationsEnabled = true;
+                    $('#enableNotifications').prop('checked', true);
+                    updateMilestoneToggles();
+                    saveData();
+                }
+                $('#notificationPermissionModal').modal('hide');
+            });
+        }));
+
+        $('#addMilestone').click(errorHandler(function() {
+            $('#addMilestoneModal').modal('show');
+        }));
+
+        $('#saveMilestone').click(errorHandler(function() {
+            const hours = parseInt($('#milestoneHours').val());
+            const message = $('#milestoneMessage').val();
+            if (hours && message) {
+                milestones.push({
+                    hours,
+                    message
+                });
+                updateMilestoneAlerts();
+                saveData();
+                $('#addMilestoneModal').modal('hide');
+            } else {
+                alert('Please enter valid hours and message for the milestone.');
+            }
+        }));
+
+        $('#shareButton').click(errorHandler(shareAchievement));
+
+        $('#bmiAge').change(errorHandler(function() {
+            age = parseInt($(this).val());
+            saveData();
+        }));
+
+        $('input[name="bmiGender"]').change(errorHandler(function() {
+            gender = $(this).attr('id') === 'bmiMale' ? 'Male' : 'Female';
+            saveData();
+        }));
+
+        $(document).on('click', '.remove-milestone', errorHandler(function() {
+            const index = $(this).data('index');
+            removeCustomMilestone(index);
+        }));
+
+        $(document).on('change', '.custom-milestone', errorHandler(function() {
+            const index = $(this).attr('id').replace('customMilestone', '');
+            milestones[index].enabled = $(this).prop('checked');
+            saveData();
+        }));
+
+        $('.default-milestone').change(errorHandler(function() {
+            const id = $(this).attr('id');
+            toggleDefaultMilestone(id);
+        }));
+
+        function init() {
+            loadData();
+            updateUnitDisplay();
+            if (isFasting) {
+                startFasting(false);
+            } else {
+                updateTimer();
+            }
+
+            setInterval(updateTimer, 1000);
+            setInterval(function() {
+                checkAndResetWaterIntake();
+                updateStatusIcons();
+            }, 60000);
+
+            updateMilestoneToggles();
+
+            if (notificationsEnabled) {
+                handleNotificationPermission();
+            }
+        }
+
+        Math.erf = Math.erf || function(x) {
+            var t = 1 / (1 + 0.5 * Math.abs(x));
+            var tau = t * Math.exp(-x * x - 1.26551223 + t * (1.00002368 +
+                t * (0.37409196 + t * (0.09678418 + t * (-0.18628806 +
+                    t * (0.27886807 + t * (-1.13520398 + t * (1.48851587 +
+                        t * (-0.82215223 + t * 0.17087277)))))))))
+            return x >= 0 ? 1 - tau : tau - 1;
+        };
+
+        init();
+    });
+</script>
+<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;rayId&quot;:&quot;8eb3755319570a57&quot;,&quot;version&quot;:&quot;2024.10.5&quot;,&quot;r&quot;:1,&quot;token&quot;:&quot;72470c494acb4e569f59906fadb4eb34&quot;,&quot;serverTiming&quot;:{&quot;name&quot;:{&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfSpeedBrain&quot;:true,&quot;cfCacheStatus&quot;:true}}}" crossorigin="anonymous"></script>
+
+
+</body></html>
